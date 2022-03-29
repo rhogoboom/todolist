@@ -1,8 +1,7 @@
-import {loadUI} from './loadUI'
+import './style.css';
+import {initialLoad} from './initialLoad'
 
-console.log('test1');
-
-loadUI()
+initialLoad()
 
 // class ToDo {
 //     constructor(title, description, dueDate, priority) {
