@@ -61,14 +61,8 @@ const createRightHead = (div) => {
 const createNav = (div) => {
     const projectBar = document.createElement('div');
     projectBar.classList.add('sidebar');
-
     createTemporalProjects(projectBar);
-
-    
-
-    
-    
-    
+    createProjectsDiv(projectBar);
     div.appendChild(projectBar);
 
 
@@ -76,7 +70,7 @@ const createNav = (div) => {
 
 
 const createTemporalProjects = (div) => {
-    const times = [[Inbox, 'Inbox'], [Today, 'Today'], [Week, 'This week']]
+    const times = [[Inbox, 'All'], [Today, 'Today'], [Week, 'This week']]
     const temporalList = document.createElement('ul');
     times.forEach((item) => {
         const temporalItem = document.createElement('li');
@@ -104,7 +98,24 @@ const createProjectsDiv = (div) => {
     projectsDiv.appendChild(projectTitle);
 
     const projectsList = document.createElement('ul');
+
+    const addProjectButton = document.createElement('button');
+    const addIcon = new Image();
+    addIcon.src = Add;
+    addProjectButton.appendChild(addIcon);
+    const buttonText = document.createElement('span');
+    buttonText.textContent = 'Add Project';
+    addProjectButton.appendChild(buttonText);
     
+    addProjectButton.classList.add('add-project-button')
+
+    projectsDiv.appendChild(projectsList);
+
+    projectsDiv.appendChild(addProjectButton);
+
+    projectsDiv.classList.add('projects-container')
+    
+    div.appendChild(projectsDiv);
 
 
 }
